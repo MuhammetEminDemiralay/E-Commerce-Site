@@ -1,0 +1,15 @@
+
+
+.home{
+    min-height: 100vh;
+}
+
+.home .product{
+    background-color: #3c6e71;
+}
+
+.home .category{
+    background-color: #ffffff;
+}
+
+
