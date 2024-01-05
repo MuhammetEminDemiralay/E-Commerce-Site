@@ -1,25 +1,49 @@
+import '../Css/Home.css'
 import { useEffect, useState } from "react";
+import ProductCard from "./ProductCard";
+import { useParams } from 'react-router-dom';
 
 function Home() {
 
-    const productModel = { productId: null, categoryId: null, productName: "", unitPrice: null, unitsInStock: null }
+    const productModel = {
+        id: null, 
+        categoryId: null,
+        productName: "",
+        unitPrice: null,
+        unitsInStock: null,
+        categoryName: "",
+        productImagePath: [],
+        description: ""
+    }
+
+
     const [products, setProducts] = useState([productModel]);
+    const params = useParams();
+
     useEffect(() => {
-        fetch('https://localhost:44349/api/Products/getall')
+        const paramsName = Object.keys(params);
+        const paramsValue = Object.values(params);
+        if (paramsName[0] === "categoryId") {
+            fetch(`https://localhost:44349/api/Products/getproductdetailsbycategoryid?categoryId=${paramsValue}`)
             .then(res => res.json())
-            .then(res => setProducts(res.data))
-      
-    }, [])
+            .then(res => setProducts(res.data))      
+        }else{
+            fetch('https://localhost:44349/api/Products/getproductdetails')
+                .then(res => res.json())
+                .then(res => setProducts(res.data))
+        }
+    }, [params])
 
     return (
         <>
-            <h1>PRODUCTS</h1>
-            <ul>
-                {
-                    products.map((item) => (
-                        <li key={item.productId}>{item.productName}</li>
-                    ))
-                }
+            <ul className="wrapper">
+                <div className='inter-wrapper'>
+                    {
+                        products.map((product) => (
+                            <ProductCard product={product} key={product.id} />
+                        ))
+                    }
+                </div>
             </ul>
         </>
     )

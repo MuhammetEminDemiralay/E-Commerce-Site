@@ -1,5 +1,28 @@
 .wrapper-navbar{
     width: 100%;
-    padding: 5px;
+    padding: 15px;
     background-color: #000814;
+}
+
+.wrapper-navbar .navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 100px;
+    width: 100%;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.navbar .bar{
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.navbar .bar:hover{
+    border: 3px solid #05eeff;
+}
+
+.navbar i{
+    margin-right: 8px;
 }

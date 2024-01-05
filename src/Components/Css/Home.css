@@ -1,0 +1,14 @@
+.wrapper{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.inter-wrapper{
+    display: flex;
+    max-width: 790px;
+    width: 100%;
+    gap: 20px;
+    flex-wrap: wrap;
+}
