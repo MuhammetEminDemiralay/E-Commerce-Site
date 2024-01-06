@@ -6,10 +6,11 @@ function Navbar() {
         <>
             <nav className="wrapper-navbar">
                 <div className="navbar py-3">
-                    <NavLink  className="nav-link text-light bar" to="/"><i class='bx bx-home'></i><span>Home</span></NavLink>
-                    <NavLink  className="nav-link text-light bar" to="/products"><span>Products</span></NavLink>
-                    <NavLink  className="nav-link text-light bar" to="/contact"><span>Contact</span></NavLink>
-                    <NavLink  className="nav-link text-light bar" to="/about"><span>About</span></NavLink>
+                    <NavLink className="nav-link text-light bar" to="/"><i class='bx bxs-dollar-circle'></i><span>MED E-STORE</span></NavLink>
+                    <NavLink className="nav-link text-light bar" to="/"><i class='bx bx-home'></i><span>Home</span></NavLink>
+                    <NavLink className="nav-link text-light bar" to="/products"><span>Products</span></NavLink>
+                    <NavLink className="nav-link text-light bar" to="/contact"><span>Contact</span></NavLink>
+                    <NavLink className="nav-link text-light bar" to="/about"><span>About</span></NavLink>
                 </div>
             </nav>
         </>
